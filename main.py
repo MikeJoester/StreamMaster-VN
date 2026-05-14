@@ -599,6 +599,13 @@ class StreamMasterApp:
                                 "After finishing the tournament, click 'Save' to update the results display."
                                 ).grid(row=0, column=0, columnspan=2, pady=10)
 
+    def refresh_bracket_control_tab(self):
+        for widget in self.tab_bracket_control.winfo_children():
+            widget.destroy()
+
+        self.match_entries = {}
+        self.build_bracket_control_tab() 
+
     def save_all(self):
         self.data["event"]["name"] = self.entry_event_name.get()
         self.data["event"]["best_of"] = self.entry_best_of.get()
@@ -669,6 +676,8 @@ class StreamMasterApp:
 
         placements = compute_placements(self.data["bracket"])
         self.data["results"]["players"] = placements
+
+        self.refresh_bracket_control_tab()
 
         save_data(self.data)
 
