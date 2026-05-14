@@ -1,5 +1,5 @@
 # StreamMaster
-Streaming utility for OBS studio, specifically Street Fighter 6 tournament streams.
+Streaming utility for OBS studio, specialized in TEKKEN 8 & STREET FIGHTER 6 streams. You can customize to add a specific game.
 
 DISCLAIMER:
 I'm new to coding. For this software whenever I was stuck or something wasn't working out like it should used AI to debug and problem solving. For art and graphics no type of AI was involved. As well, photoshop editable files (.psd) are present in the images folder for full transparency.
@@ -46,6 +46,9 @@ CUSTOMIZATION:
 You can use the .psd templates however you like to. But if you need to move the position from texts that are going to be edited by the executable, you gotta edit their position in the respective html file. The same with the default font. This applies for text sizes and character images sizes. 
 
 CHANGELOG:<br>
+StreamMaster Tekken Edition Ver0.5<br>
+-Event name and Match Info has been reposition so it doesn't clash with Tekken 8's default timer. This version is a little bigger in file size due to more chars and newer fonts.
+
 StreamMaster Ver 0.5<br>
 -Compiled icon to executable file, though not in the window lmao
 
