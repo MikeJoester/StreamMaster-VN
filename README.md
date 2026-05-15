@@ -54,7 +54,7 @@ Qol Changes by Pandipipas:<br>
 -Spinboxes added to scores. User is still able to manually write score.<br>
 
 Misc Changes:<br>
--Proper software icon now shows in window.<br
+-Proper software icon now shows in window.<br>
 
 StreamMaster Tekken Edition Ver0.5<br>
 -Event name and Match Info has been reposition so it doesn't clash with Tekken 8's default timer. This version is a little bigger in file size due to more chars and newer fonts.
