@@ -46,6 +46,16 @@ CUSTOMIZATION:
 You can use the .psd templates however you like to. But if you need to move the position from texts that are going to be edited by the executable, you gotta edit their position in the respective html file. The same with the default font. This applies for text sizes and character images sizes. 
 
 CHANGELOG:<br>
+StreamMaster Tekken Edition Ver0.6<br>
+-Created a branch for Tekken. For now on, every game release will be featured in a branch.<br>
+
+Qol Changes by Pandipipas:<br>
+-Names are now properly shown in bracket control tab.<br>
+-Spinboxes added to scores. User is still able to manually write score.<br>
+
+Misc Changes:<br>
+-Proper software icon now shows in window.<br
+
 StreamMaster Tekken Edition Ver0.5<br>
 -Event name and Match Info has been reposition so it doesn't clash with Tekken 8's default timer. This version is a little bigger in file size due to more chars and newer fonts.
 
