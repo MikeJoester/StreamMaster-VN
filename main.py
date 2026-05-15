@@ -367,7 +367,7 @@ class StreamMasterApp:
         row += 1
 
         ttk.Label(content, text="Player 1 Score:").grid(row=row, column=0, sticky="w", padx=5, pady=2)
-        self.entry_p1_score = ttk.Entry(content, width=30)
+        self.entry_p1_score = ttk.Spinbox(content, from_=0, to=100, width=28)
         self.entry_p1_score.insert(0, self.data["scoreboard"]["p1"]["score"])
         self.entry_p1_score.grid(row=row, column=1, sticky="w", padx=5)
         row += 1
@@ -392,7 +392,7 @@ class StreamMasterApp:
         row += 1
 
         ttk.Label(content, text="Player 2 Score:").grid(row=row, column=0, sticky="w", padx=5, pady=2)
-        self.entry_p2_score = ttk.Entry(content, width=30)
+        self.entry_p2_score = ttk.Spinbox(content, from_=0, to=100, width=28)
         self.entry_p2_score.insert(0, self.data["scoreboard"]["p2"]["score"])
         self.entry_p2_score.grid(row=row, column=1, sticky="w", padx=5)
         row += 1
@@ -527,7 +527,7 @@ class StreamMasterApp:
             lbl_p1.pack(side="left", padx=2)
 
             score1_var = tk.StringVar(value=str(match_data.get("score1", 0)))
-            entry1 = ttk.Entry(match_frame, textvariable=score1_var, width=5)
+            entry1 = ttk.Spinbox(match_frame, textvariable=score1_var, width=5, from_=0, to=100)
             entry1.pack(side="left", padx=2)
 
             sep = ttk.Label(match_frame, text="-")
@@ -537,7 +537,7 @@ class StreamMasterApp:
             lbl_p2.pack(side="left", padx=2)
 
             score2_var = tk.StringVar(value=str(match_data.get("score2", 0)))
-            entry2 = ttk.Entry(match_frame, textvariable=score2_var, width=5)
+            entry2 = ttk.Spinbox(match_frame, textvariable=score2_var, width=5, from_=0, to=100)
             entry2.pack(side="left", padx=2)
 
             self.match_entries[match_key] = (score1_var, score2_var)
@@ -573,7 +573,7 @@ class StreamMasterApp:
             lbl_p1.pack(side="left", padx=2)
 
             score1_var = tk.StringVar(value=str(reset_data.get("score1", 0)))
-            entry1 = ttk.Entry(match_frame, textvariable=score1_var, width=5)
+            entry1 = ttk.Spinbox(match_frame, textvariable=score1_var, width=5, from_=0, to=100)
             entry1.pack(side="left", padx=2)
 
             sep = ttk.Label(match_frame, text="-")
@@ -583,7 +583,7 @@ class StreamMasterApp:
             lbl_p2.pack(side="left", padx=2)
 
             score2_var = tk.StringVar(value=str(reset_data.get("score2", 0)))
-            entry2 = ttk.Entry(match_frame, textvariable=score2_var, width=5)
+            entry2 = ttk.Spinbox(match_frame, textvariable=score2_var, width=5, from_=0, to=100)
             entry2.pack(side="left", padx=2)
 
             self.reset_entry_vars = (score1_var, score2_var)
