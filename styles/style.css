@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Tekken';
+    src: url('fonts/Bebas-Neue-Pro-Expanded-ExtraBold-Italic-BF66cf3d7962375.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 1920px;
+    height: 1080px;
+    font-family: 'Tekken', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    overflow: hidden;
+    position: relative;
+    letter-spacing: 1.5px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}

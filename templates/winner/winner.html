@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <style>
+        body {
+            background-image: url('../../images/T_UI_PF_BG_150.png');
+        }
+        .split {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        .character-side {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .character-img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        .text-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 2;
+        }
+        .winner-text {
+            font-size: 370px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 15px;
+            margin-bottom: 0;
+            white-space: nowrap;
+        }
+        .player-info {
+            border-radius: 15px;
+            font-size: 68px;
+            font-weight: bold;
+            white-space: nowrap;
+            margin-top: 0;
+        }
+    </style>
+    <script>
+        async function loadData() {
+            try {
+                const resp = await fetch('../../data.json');
+                const data = await resp.json();
+                const charFile = data.winner.character.toLowerCase().replace(/[ .]/g, '');
+                document.getElementById('winnerChar').src = `../../images/characters/${charFile}.png`;
+                
+
+                const country = data.winner.country || '';
+                const team = data.winner.team || '';
+                const player = data.winner.winner || '';
+                let infoParts = [];
+                if (country) infoParts.push(country);
+                if (team) infoParts.push(team);
+                if (player) infoParts.push(player);
+                const infoText = infoParts.join(' · ');
+                document.getElementById('playerInfo').innerText = infoText;
+
+                resizeTextToFit(document.querySelector('.winner-text'), 60, 370);
+                resizeTextToFit(document.getElementById('playerInfo'), 20, 68);
+            } catch(e) { console.error(e); }
+        }
+
+        function resizeTextToFit(element, minFontSize, maxFontSize) {
+            if (!element) return;
+            const maxWidth = window.innerWidth * 0.45;
+            let fontSize = maxFontSize;
+            element.style.fontSize = fontSize + 'px';
+            while (element.scrollWidth > maxWidth && fontSize > minFontSize) {
+                fontSize -= 1;
+                element.style.fontSize = fontSize + 'px';
+            }
+        }
+
+        setInterval(loadData, 1000);
+        window.onload = loadData;
+    </script>
+</head>
+<body>
+    <div class="split">
+        <div class="character-side">
+            <img id="winnerChar" class="character-img" alt="Character">
+        </div>
+        <div class="text-side">
+            <div class="winner-text">WINNER</div>
+            <div class="player-info" id="playerInfo"></div>
+        </div>
+    </div>
+</body>
+</html>

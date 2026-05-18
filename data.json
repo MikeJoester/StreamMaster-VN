@@ -1,100 +1,153 @@
 {
-  "event": {
-    "name": "CBT 2025",
-    "best_of": "Grand Finals Reset"
-  },
-  "scoreboard": {
-    "p1": {
-      "name": "ForeverLongestNameEverInEternalLife",
-      "team": "NBR",
-      "score": 0,
-      "country": "VE"
-    },
-    "p2": {
-      "name": "ForeverLongestNameEverInEternalLife",
-      "team": "ALC",
-      "score": 0,
-      "country": "US"
-    }
-  },
-  "vs": {
-    "p1": {
-      "name": "Player 1",
-      "character": "Alex"
-    },
-    "p2": {
-      "name": "Player 2",
-      "character": "Mai"
-    }
-  },
-  "winner": {
-    "winner": "Player 1",
-    "character": "Zangief",
-    "team": "",
-    "country": ""
-  },
   "bracket": {
-    "players": [
-      {
-        "name": "SQLOT",
-        "team": "",
-        "country": "",
-        "character": "Alex"
-      },
-      {
-        "name": "Elec",
-        "team": "GodEaters",
-        "country": "",
-        "character": "Dee Jay"
-      },
-      {
-        "name": "Ninocci",
-        "team": "AE",
-        "country": "",
-        "character": "C. Viper"
-      },
-      {
-        "name": "Kiwisaurio",
-        "team": "",
-        "country": "",
-        "character": "E.Honda"
-      },
-      {
-        "name": "Cax",
-        "team": "",
-        "country": "",
-        "character": "Luke"
-      },
-      {
-        "name": "Pezziman",
-        "team": "GodEaters",
-        "country": "",
-        "character": "Rashid"
-      },
-      {
-        "name": "DementorVZLA",
-        "team": "",
-        "country": "",
-        "character": "Ken"
-      },
-      {
-        "name": "Kamatari",
-        "team": "",
-        "country": "",
-        "character": "Ken"
-      }
-    ],
     "matches": {
+      "grandFinal": {
+        "GF": {
+          "participants": [
+            {
+              "matchId": "WF",
+              "outcome": "winner",
+              "type": "match"
+            },
+            {
+              "matchId": "LL",
+              "outcome": "winner",
+              "type": "match"
+            }
+          ],
+          "resetMatch": null,
+          "score1": 3,
+          "score2": 2,
+          "winner": 1
+        }
+      },
+      "losers": {
+        "LF": {
+          "participants": [
+            {
+              "matchId": "LSF1",
+              "outcome": "winner",
+              "type": "match"
+            },
+            {
+              "matchId": "LSF2",
+              "outcome": "winner",
+              "type": "match"
+            }
+          ],
+          "score1": 3,
+          "score2": 0,
+          "winner": 1
+        },
+        "LL": {
+          "participants": [
+            {
+              "matchId": "LF",
+              "outcome": "winner",
+              "type": "match"
+            },
+            {
+              "matchId": "WF",
+              "outcome": "loser",
+              "type": "match"
+            }
+          ],
+          "score1": 2,
+          "score2": 3,
+          "winner": 2
+        },
+        "LQF1": {
+          "participants": [
+            {
+              "index": 4,
+              "type": "player"
+            },
+            {
+              "index": 5,
+              "type": "player"
+            }
+          ],
+          "score1": 3,
+          "score2": 0,
+          "winner": 1
+        },
+        "LQF2": {
+          "participants": [
+            {
+              "index": 6,
+              "type": "player"
+            },
+            {
+              "index": 7,
+              "type": "player"
+            }
+          ],
+          "score1": 3,
+          "score2": 0,
+          "winner": 1
+        },
+        "LSF1": {
+          "participants": [
+            {
+              "matchId": "WSF1",
+              "outcome": "loser",
+              "type": "match"
+            },
+            {
+              "matchId": "LQF1",
+              "outcome": "winner",
+              "type": "match"
+            }
+          ],
+          "score1": 2,
+          "score2": 3,
+          "winner": 2
+        },
+        "LSF2": {
+          "participants": [
+            {
+              "matchId": "WSF2",
+              "outcome": "loser",
+              "type": "match"
+            },
+            {
+              "matchId": "LQF2",
+              "outcome": "winner",
+              "type": "match"
+            }
+          ],
+          "score1": 2,
+          "score2": 3,
+          "winner": 2
+        }
+      },
       "winners": {
+        "WF": {
+          "participants": [
+            {
+              "matchId": "WSF1",
+              "outcome": "winner",
+              "type": "match"
+            },
+            {
+              "matchId": "WSF2",
+              "outcome": "winner",
+              "type": "match"
+            }
+          ],
+          "score1": 3,
+          "score2": 1,
+          "winner": 1
+        },
         "WSF1": {
           "participants": [
             {
-              "type": "player",
-              "index": 0
+              "index": 0,
+              "type": "player"
             },
             {
-              "type": "player",
-              "index": 1
+              "index": 1,
+              "type": "player"
             }
           ],
           "score1": 3,
@@ -104,208 +157,155 @@
         "WSF2": {
           "participants": [
             {
-              "type": "player",
-              "index": 2
+              "index": 2,
+              "type": "player"
             },
             {
-              "type": "player",
-              "index": 3
+              "index": 3,
+              "type": "player"
             }
           ],
-          "score1": 3,
-          "score2": 2,
-          "winner": 1
-        },
-        "WF": {
-          "participants": [
-            {
-              "type": "match",
-              "matchId": "WSF1",
-              "outcome": "winner"
-            },
-            {
-              "type": "match",
-              "matchId": "WSF2",
-              "outcome": "winner"
-            }
-          ],
-          "score1": 3,
-          "score2": 2,
-          "winner": 1
-        }
-      },
-      "losers": {
-        "LQF1": {
-          "participants": [
-            {
-              "type": "player",
-              "index": 4
-            },
-            {
-              "type": "player",
-              "index": 5
-            }
-          ],
-          "score1": 1,
+          "score1": 2,
           "score2": 3,
           "winner": 2
-        },
-        "LQF2": {
-          "participants": [
-            {
-              "type": "player",
-              "index": 6
-            },
-            {
-              "type": "player",
-              "index": 7
-            }
-          ],
-          "score1": 3,
-          "score2": 1,
-          "winner": 1
-        },
-        "LSF1": {
-          "participants": [
-            {
-              "type": "match",
-              "matchId": "WSF1",
-              "outcome": "loser"
-            },
-            {
-              "type": "match",
-              "matchId": "LQF1",
-              "outcome": "winner"
-            }
-          ],
-          "score1": 3,
-          "score2": 2,
-          "winner": 1
-        },
-        "LSF2": {
-          "participants": [
-            {
-              "type": "match",
-              "matchId": "WSF2",
-              "outcome": "loser"
-            },
-            {
-              "type": "match",
-              "matchId": "LQF2",
-              "outcome": "winner"
-            }
-          ],
-          "score1": 1,
-          "score2": 3,
-          "winner": 2
-        },
-        "LF": {
-          "participants": [
-            {
-              "type": "match",
-              "matchId": "LSF1",
-              "outcome": "winner"
-            },
-            {
-              "type": "match",
-              "matchId": "LSF2",
-              "outcome": "winner"
-            }
-          ],
-          "score1": 1,
-          "score2": 3,
-          "winner": 2
-        },
-        "LL": {
-          "participants": [
-            {
-              "type": "match",
-              "matchId": "LF",
-              "outcome": "winner"
-            },
-            {
-              "type": "match",
-              "matchId": "WF",
-              "outcome": "loser"
-            }
-          ],
-          "score1": 1,
-          "score2": 3,
-          "winner": 2
-        }
-      },
-      "grandFinal": {
-        "GF": {
-          "participants": [
-            {
-              "type": "match",
-              "matchId": "WF",
-              "outcome": "winner"
-            },
-            {
-              "type": "match",
-              "matchId": "LL",
-              "outcome": "winner"
-            }
-          ],
-          "score1": 3,
-          "score2": 1,
-          "winner": 1,
-          "resetMatch": null
         }
       }
-    }
+    },
+    "players": [
+      {
+        "character": "King",
+        "country": "",
+        "name": "Player 1",
+        "team": ""
+      },
+      {
+        "character": "Clive",
+        "country": "",
+        "name": "Player 2",
+        "team": ""
+      },
+      {
+        "character": "Alisa",
+        "country": "",
+        "name": "Player 3",
+        "team": ""
+      },
+      {
+        "character": "Asuka",
+        "country": "",
+        "name": "Player 4",
+        "team": ""
+      },
+      {
+        "character": "Azucena",
+        "country": "",
+        "name": "Player 5",
+        "team": ""
+      },
+      {
+        "character": "Shaheen",
+        "country": "",
+        "name": "Player 6",
+        "team": ""
+      },
+      {
+        "character": "Eddy",
+        "country": "",
+        "name": "Player 7",
+        "team": ""
+      },
+      {
+        "character": "Heihachi",
+        "country": "",
+        "name": "Player 8",
+        "team": ""
+      }
+    ]
+  },
+  "event": {
+    "best_of": "Grand Final (BO5)",
+    "name": ""
   },
   "results": {
     "players": [
       {
-        "name": "SQLOT",
-        "team": "",
+        "character": "King",
         "country": "",
-        "character": "Alex"
+        "name": "Player 1",
+        "team": ""
       },
       {
-        "name": "Ninocci",
-        "team": "AE",
+        "character": "Asuka",
         "country": "",
-        "character": "C. Viper"
+        "name": "Player 4",
+        "team": ""
       },
       {
-        "name": "DementorVZLA",
-        "team": "",
+        "character": "Azucena",
         "country": "",
-        "character": "Ken"
+        "name": "Player 5",
+        "team": ""
       },
       {
-        "name": "Elec",
-        "team": "GodEaters",
+        "character": "Eddy",
         "country": "",
-        "character": "Dee Jay"
+        "name": "Player 7",
+        "team": ""
       },
       {
-        "name": "Pezziman",
-        "team": "GodEaters",
+        "character": "Clive",
         "country": "",
-        "character": "Rashid"
+        "name": "Player 2",
+        "team": ""
       },
       {
-        "name": "Kiwisaurio",
-        "team": "",
+        "character": "Alisa",
         "country": "",
-        "character": "E.Honda"
+        "name": "Player 3",
+        "team": ""
       },
       {
-        "name": "Cax",
-        "team": "",
+        "character": "Shaheen",
         "country": "",
-        "character": "Luke"
+        "name": "Player 6",
+        "team": ""
       },
       {
-        "name": "Kamatari",
-        "team": "",
+        "character": "Heihachi",
         "country": "",
-        "character": "Ken"
+        "name": "Player 8",
+        "team": ""
       }
     ]
+  },
+  "scoreboard": {
+    "p1": {
+      "name": "Le Chat",
+      "team": "DNFGC",
+      "score": 0,
+      "country": "VN"
+    },
+    "p2": {
+      "name": "Jar",
+      "team": "DNFGC",
+      "score": 0,
+      "country": "VN"
+    }
+  },
+  "vs": {
+    "p1": {
+      "name": "Le Chat",
+      "character": "Bryan"
+    },
+    "p2": {
+      "name": "Jar",
+      "character": "Feng"
+    }
+  },
+  "winner": {
+    "winner": "Player 1",
+    "team": "DNFGC",
+    "country": "",
+    "character": "Bryan"
   }
 }
