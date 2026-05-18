@@ -98,6 +98,10 @@
 
             <!-- Bracket Players -->
             <div class="tab-pane fade" id="tab-bracket">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>Player List</h4>
+                    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#bulkAddModal">Bulk Add Players</button>
+                </div>
                 <div class="row" id="bracket-players-container">
                     <!-- JS populated -->
                 </div>
@@ -113,7 +117,42 @@
                     <button class="btn btn-danger btn-sm" onclick="resetScores()">Reset All Scores</button>
                 </div>
                 <div id="matches-container">
-                    <!-- JS populated -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Winners Bracket</h5>
+                            <div id="winners-matches"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Losers Bracket</h5>
+                            <div id="losers-matches"></div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h5>Finals</h5>
+                            <div id="finals-matches"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Add Modal -->
+    <div class="modal fade" id="bulkAddModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bulk Add Players</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted">Enter player names, one per line. This will overwrite the names of the current players in order.</p>
+                    <textarea class="form-control" id="bulk-player-names" rows="10" placeholder="Player 1&#10;Player 2&#10;..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="applyBulkAdd()">Apply</button>
                 </div>
             </div>
         </div>
@@ -123,6 +162,30 @@
     <script>
         let appData = {};
         const characters = {{ characters | tojson }};
+
+        function applyBulkAdd() {
+            const lines = document.getElementById('bulk-player-names').value.split('\n').map(l => l.trim()).filter(l => l !== '');
+            if (lines.length === 0) return;
+
+            lines.forEach((name, i) => {
+                if (appData.bracket.players[i]) {
+                    appData.bracket.players[i].name = name;
+                }
+            });
+
+            // Close modal
+            const modalEl = document.getElementById('bulkAddModal');
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            modal.hide();
+
+            // Refresh UI
+            populateUI();
+            
+            // Clear textarea
+            document.getElementById('bulk-player-names').value = '';
+            
+            alert('Players updated! Don\'t forget to click "Save All Changes" to persist.');
+        }
 
         async function resetScores() {
             if (!confirm('Are you sure you want to reset ALL scores to 0? This includes the bracket and the active scoreboard.')) return;
@@ -219,39 +282,62 @@
             return resolveParticipant(match.participants[side-1]);
         }
 
+        function createMatchHTML(id, type, data) {
+            const p1 = getParticipantName(data.participants[0]);
+            const p2 = getParticipantName(data.participants[1]);
+            const typeLabel = type.charAt(0).toUpperCase() + type.slice(1);
+            return `
+                <div class="match-card">
+                    <div class="match-title">${typeLabel} - ${id}</div>
+                    <div class="row align-items-center">
+                        <div class="col text-end">${p1}</div>
+                        <div class="col-2"><input type="number" class="form-control form-control-sm m-score" data-id="${id}" data-type="${type}" data-side="1" value="${data.score1}"></div>
+                        <div class="col-1 text-center">-</div>
+                        <div class="col-2"><input type="number" class="form-control form-control-sm m-score" data-id="${id}" data-type="${type}" data-side="2" value="${data.score2}"></div>
+                        <div class="col">${p2}</div>
+                    </div>
+                </div>
+            `;
+        }
+
         function renderMatches() {
-            const cont = document.getElementById('matches-container');
-            cont.innerHTML = '';
+            const winnersCont = document.getElementById('winners-matches');
+            const losersCont = document.getElementById('losers-matches');
+            const finalsCont = document.getElementById('finals-matches');
             
-            const allMatches = [];
-            for (let k in appData.bracket.matches.winners) allMatches.push({id: k, type: 'winners', data: appData.bracket.matches.winners[k]});
-            for (let k in appData.bracket.matches.losers) allMatches.push({id: k, type: 'losers', data: appData.bracket.matches.losers[k]});
-            allMatches.push({id: 'GF', type: 'grandFinal', data: appData.bracket.matches.grandFinal.GF});
+            winnersCont.innerHTML = '';
+            losersCont.innerHTML = '';
+            finalsCont.innerHTML = '';
+
+            // Column 1: Winners - WSF1, WSF2, WF
+            ['WSF1', 'WSF2', 'WF'].forEach(id => {
+                if (appData.bracket.matches.winners[id]) {
+                    winnersCont.innerHTML += createMatchHTML(id, 'winners', appData.bracket.matches.winners[id]);
+                }
+            });
+
+            // Column 2: Losers - LQF1, LQF2, LSF1, LSF2
+            ['LQF1', 'LQF2', 'LSF1', 'LSF2'].forEach(id => {
+                if (appData.bracket.matches.losers[id]) {
+                    losersCont.innerHTML += createMatchHTML(id, 'losers', appData.bracket.matches.losers[id]);
+                }
+            });
+
+            // Final Column: LF, LL, GF
+            ['LF', 'LL'].forEach(id => {
+                if (appData.bracket.matches.losers[id]) {
+                    finalsCont.innerHTML += createMatchHTML(id, 'losers', appData.bracket.matches.losers[id]);
+                }
+            });
             
+            finalsCont.innerHTML += createMatchHTML('GF', 'grandFinal', appData.bracket.matches.grandFinal.GF);
+
             if (appData.bracket.matches.grandFinal.GF.resetMatch) {
-                allMatches.push({id: 'Reset', type: 'reset', data: appData.bracket.matches.grandFinal.GF.resetMatch});
+                finalsCont.innerHTML += createMatchHTML('Reset', 'reset', appData.bracket.matches.grandFinal.GF.resetMatch);
                 document.getElementById('gf-reset-enable').checked = true;
             } else {
                 document.getElementById('gf-reset-enable').checked = false;
             }
-
-            allMatches.forEach(m => {
-                const div = document.createElement('div');
-                div.className = 'match-card';
-                const p1 = getParticipantName(m.data.participants[0]);
-                const p2 = getParticipantName(m.data.participants[1]);
-                div.innerHTML = `
-                    <div class="match-title">${m.type.toUpperCase()} - ${m.id}</div>
-                    <div class="row align-items-center">
-                        <div class="col text-end">${p1}</div>
-                        <div class="col-2"><input type="number" class="form-control form-control-sm m-score" data-id="${m.id}" data-type="${m.type}" data-side="1" value="${m.data.score1}"></div>
-                        <div class="col-1 text-center">-</div>
-                        <div class="col-2"><input type="number" class="form-control form-control-sm m-score" data-id="${m.id}" data-type="${m.type}" data-side="2" value="${m.data.score2}"></div>
-                        <div class="col">${p2}</div>
-                    </div>
-                `;
-                cont.appendChild(div);
-            });
         }
 
         function toggleReset() {

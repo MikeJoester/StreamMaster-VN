@@ -30,7 +30,7 @@
             height: 45px;
         }
         .p1-score {
-            left: 263px;
+            left: 253px;
             width: 37px;
         }
         .p1-country {
@@ -41,17 +41,6 @@
             left: 383px;
             width: 358px;
         }
-        .match-info {
-            left: 904px;
-            width: 106px;
-            top: 5px;                /* moved up 20px */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: auto;             /* let content determine height */
-            overflow: visible;        /* ensure text is not clipped */
-            white-space: normal;      /* allow line breaks */
-        }
         .p2-team-name {
             left: 1173px;
             width: 358px;
@@ -61,8 +50,19 @@
             width: 37px;
         }
         .p2-score {
-            left: 1614px;
+            left: 1630px;
             width: 37px;
+        }
+        .match-info {
+            left: 904px;
+            width: 106px;
+            top: 5px;                /* moved up 20px */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: auto;             /* let content determine height */
+            overflow: visible;        /* ensure text is not clipped */
+            white-space: normal;      /* allow line breaks */
         }
         .p1-score, .p2-score {
             font-size: 32px;
@@ -73,21 +73,10 @@
         .p1-team-name, .p2-team-name {
             font-size: 20px;
         }
-        .match-info {
-            font-size: 16px;
-        }
-        #eventName {
-            font-size: 18px;
-            font-weight: bold;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
         #bestOf {
-            font-size: 14px;
+            font-size: 16px;
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            overflow: visible;
         }
     </style>
     <script>
@@ -113,8 +102,7 @@
                 resizeTextToFit(document.querySelector('.p2-country'), 8, 18);
                 
 
-                resizeTextToFit(document.getElementById('eventName'), 10, 18);
-                resizeTextToFit(document.getElementById('bestOf'), 8, 14);
+                //resizeTextToFit(document.getElementById('bestOf'), 10, 24);
             } catch(e) { console.error(e); }
         }
         
@@ -145,7 +133,6 @@
         <div class="p1-country" id="p1Country"></div>
         <div class="p1-team-name" id="p1TeamName"></div>
         <div class="match-info">
-            <div id="eventName"></div>
             <div id="bestOf"></div>
         </div>
         <div class="p2-team-name" id="p2TeamName"></div>

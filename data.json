@@ -16,9 +16,9 @@
             }
           ],
           "resetMatch": null,
-          "score1": 3,
-          "score2": 2,
-          "winner": 1
+          "score1": 0,
+          "score2": 0,
+          "winner": null
         }
       },
       "losers": {
@@ -35,9 +35,9 @@
               "type": "match"
             }
           ],
-          "score1": 3,
+          "score1": 0,
           "score2": 0,
-          "winner": 1
+          "winner": null
         },
         "LL": {
           "participants": [
@@ -52,9 +52,9 @@
               "type": "match"
             }
           ],
-          "score1": 2,
-          "score2": 3,
-          "winner": 2
+          "score1": 0,
+          "score2": 0,
+          "winner": null
         },
         "LQF1": {
           "participants": [
@@ -67,9 +67,9 @@
               "type": "player"
             }
           ],
-          "score1": 3,
+          "score1": 0,
           "score2": 0,
-          "winner": 1
+          "winner": null
         },
         "LQF2": {
           "participants": [
@@ -82,9 +82,9 @@
               "type": "player"
             }
           ],
-          "score1": 3,
+          "score1": 0,
           "score2": 0,
-          "winner": 1
+          "winner": null
         },
         "LSF1": {
           "participants": [
@@ -99,9 +99,9 @@
               "type": "match"
             }
           ],
-          "score1": 2,
-          "score2": 3,
-          "winner": 2
+          "score1": 0,
+          "score2": 0,
+          "winner": null
         },
         "LSF2": {
           "participants": [
@@ -116,9 +116,9 @@
               "type": "match"
             }
           ],
-          "score1": 2,
-          "score2": 3,
-          "winner": 2
+          "score1": 0,
+          "score2": 0,
+          "winner": null
         }
       },
       "winners": {
@@ -135,9 +135,9 @@
               "type": "match"
             }
           ],
-          "score1": 3,
-          "score2": 1,
-          "winner": 1
+          "score1": 0,
+          "score2": 0,
+          "winner": null
         },
         "WSF1": {
           "participants": [
@@ -150,9 +150,9 @@
               "type": "player"
             }
           ],
-          "score1": 3,
-          "score2": 1,
-          "winner": 1
+          "score1": 0,
+          "score2": 0,
+          "winner": null
         },
         "WSF2": {
           "participants": [
@@ -165,9 +165,9 @@
               "type": "player"
             }
           ],
-          "score1": 2,
-          "score2": 3,
-          "winner": 2
+          "score1": 0,
+          "score2": 0,
+          "winner": null
         }
       }
     },
@@ -175,106 +175,106 @@
       {
         "character": "King",
         "country": "",
-        "name": "Player 1",
+        "name": "Skibidi",
         "team": ""
       },
       {
         "character": "Clive",
         "country": "",
-        "name": "Player 2",
+        "name": "Goon",
         "team": ""
       },
       {
         "character": "Alisa",
         "country": "",
-        "name": "Player 3",
+        "name": "Goon1",
         "team": ""
       },
       {
         "character": "Asuka",
         "country": "",
-        "name": "Player 4",
+        "name": "Supaniga",
         "team": ""
       },
       {
         "character": "Azucena",
         "country": "",
-        "name": "Player 5",
+        "name": "Supachoke",
         "team": ""
       },
       {
         "character": "Shaheen",
         "country": "",
-        "name": "Player 6",
+        "name": "Swuigz",
         "team": ""
       },
       {
         "character": "Eddy",
         "country": "",
-        "name": "Player 7",
+        "name": "Sww",
         "team": ""
       },
       {
         "character": "Heihachi",
         "country": "",
-        "name": "Player 8",
+        "name": "MainManSWE",
         "team": ""
       }
     ]
   },
   "event": {
     "best_of": "Grand Final (BO5)",
-    "name": ""
+    "name": "Da Nang Coastal League"
   },
   "results": {
     "players": [
       {
-        "character": "King",
+        "name": "TBD",
+        "team": "",
         "country": "",
-        "name": "Player 1",
-        "team": ""
+        "character": "Ryu"
       },
       {
-        "character": "Asuka",
+        "name": "TBD",
+        "team": "",
         "country": "",
-        "name": "Player 4",
-        "team": ""
+        "character": "Ryu"
       },
       {
-        "character": "Azucena",
+        "name": "TBD",
+        "team": "",
         "country": "",
-        "name": "Player 5",
-        "team": ""
+        "character": "Ryu"
       },
       {
-        "character": "Eddy",
+        "name": "TBD",
+        "team": "",
         "country": "",
-        "name": "Player 7",
-        "team": ""
+        "character": "Ryu"
       },
       {
-        "character": "Clive",
+        "name": "TBD",
+        "team": "",
         "country": "",
-        "name": "Player 2",
-        "team": ""
+        "character": "Ryu"
       },
       {
-        "character": "Alisa",
+        "name": "TBD",
+        "team": "",
         "country": "",
-        "name": "Player 3",
-        "team": ""
+        "character": "Ryu"
       },
       {
-        "character": "Shaheen",
+        "name": "TBD",
+        "team": "",
         "country": "",
-        "name": "Player 6",
-        "team": ""
+        "character": "Ryu"
       },
       {
-        "character": "Heihachi",
+        "name": "TBD",
+        "team": "",
         "country": "",
-        "name": "Player 8",
-        "team": ""
+        "character": "Ryu"
       }
     ]
   },
