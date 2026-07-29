@@ -4,7 +4,7 @@ Streaming utility for OBS studio, specialized in TEKKEN 8 & STREET FIGHTER 6 str
 DISCLAIMER:
 I'm new to coding. For this software whenever I was stuck or something wasn't working out like it should used AI to debug and problem solving. For art and graphics no type of AI was involved. As well, photoshop editable files (.psd) are present in the images folder for full transparency.
 
-HOW TO USE: <br>
+HOW TO USE (hehe): <br>
 These are html files that OBS reads and you manage through the executable file. 
 
 In order to OBS to show them, create a new scene and add the specific .html file (These files are inside the 'Templates' folder).
